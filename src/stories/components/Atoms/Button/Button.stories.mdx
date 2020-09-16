@@ -1,0 +1,37 @@
+
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks'
+
+import { Button, ButtonProps } from './Button'
+import { ButtonVariant, ButtonSize } from './enums'
+
+
+<Meta title="Atoms/Button" component={Button} />
+
+export const Template = (args) => <Button { ...args } />
+
+# Button 🆎 
+
+This is our button
+
+<Canvas>
+  <Story name="Primary">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Medium}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Primary} />
+  </Story>
+  <Story name="Secondary">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Medium}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Secondary} />
+  </Story>
+</Canvas>

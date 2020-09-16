@@ -1,0 +1,316 @@
+$practical: (
+  '050': #f1f3fd,
+  '100': #e1e5ff,
+  '200': #c8d0ff,
+  '300': #a7b5ff,
+  '400': #7f93ff,
+  '500': #5e79ff,
+  '600': #3e5df2,
+  '700': #1c34a5,
+  '800': #101e66,
+  '900': #141b4d,
+);
+
+$magic: (
+  '050': #e9fbf6,
+  '100': #d7fff2,
+  '200': #bdf4e3,
+  '300': #91edd0,
+  '400': #65e6be,
+  '500': #39dfab,
+  '600': #00c389,
+  '700': #199a71,
+  '800': #126e51,
+  '900': #0b4230,
+);
+
+$crimson: (
+  '050': #ffedf0,
+  '100': #ffd9dc,
+  '200': #ffb2b8,
+  '300': #fe8b95,
+  '400': #ff6674,
+  '500': #ff3244,
+  '600': #e51729,
+  '700': #a5101c,
+  '800': #730a15,
+  '900': #320608,
+);
+
+$iron: (
+  '025': #f7f7f7,
+  '050': #f2f2f2,
+  '100': #e5e5e5,
+  '200': #cccccc,
+  '300': #b2b2b2,
+  '400': #999999,
+  '500': #808080,
+  '600': #666666,
+  '700': #4d4d4d,
+  '800': #333333,
+  '900': #1a1a1a,
+);
+
+$electric: (
+  '100': #c9acf3,
+  '200': #ae82ed,
+  '300': #9358e7,
+  '400': #7830e2,
+  '500': #5e08db,
+  '600': #4b06af,
+  '700': #380383,
+  '800': #380383,
+  '900': #13012c,
+);
+
+$energy: (
+  '050': #fff7cc,
+  '100': #fff1aa,
+  '200': #ffeb80,
+  '300': #ffe455,
+  '400': #ffdd29,
+  '500': #ffd600,
+  '600': #ccab00,
+  '700': #998000,
+  '800': #665600,
+  '900': #332b00,
+);
+
+$inch: (
+  '100': #e2f7ae,
+  '200': #d2f287,
+  '300': #c2f05f,
+  '400': #b4eb36,
+  '500': #a4e80a,
+  '600': #83ba08,
+  '700': #628b07,
+  '800': #425d05,
+  '900': #212e02,
+);
+
+$mulberry: (
+  '100': #f2b8e2,
+  '200': #ec95d3,
+  '300': #e572c4,
+  '400': #df4eb6,
+  '500': #d92ba7,
+  '600': #ad2287,
+  '700': #821964,
+  '800': #571243,
+  '900': #2b0921,
+);
+
+$power: (
+  '100': #b1e7bc,
+  '200': #8adb9c,
+  '300': #64cf79,
+  '400': #3dc358,
+  '500': #19b736,
+  '600': #14922c,
+  '700': #0f6e21,
+  '800': #094916,
+  '900': #05250b,
+);
+
+$volt: (
+  '100': #b9fbf9,
+  '200': #95f9f6,
+  '300': #73f6f2,
+  '400': #4ff4ef,
+  '500': #30f2ec,
+  '600': #25c2bd,
+  '700': #1b918e,
+  '800': #12615d,
+  '900': #0a302f,
+);
+
+$west: (
+  '100': #ffe7d0,
+  '200': #ffd0a2,
+  '300': #feb975,
+  '400': #ffa246,
+  '500': #ff8b19,
+  '600': #cb7013,
+  '700': #98540e,
+  '800': #66380a,
+  '900': #331c05,
+);
+
+$colour-maps: (
+  'practical': $practical,
+  'magic': $magic,
+  'crimson': $crimson,
+  'iron': $iron,
+  'electric': $electric,
+  'energy': $energy,
+  'inch': $inch,
+  'mulberry': $mulberry,
+  'power': $power,
+  'volt': $volt,
+  'west': $west,
+);
+
+/* PRIMARY COLOURS */
+// Practical (Blue)
+$practical-050: map_get($practical, '050');
+$practical-100: map_get($practical, '100');
+$practical-200: map_get($practical, '200');
+$practical-300: map_get($practical, '300');
+$practical-400: map_get($practical, '400');
+$practical-500: map_get($practical, '500');
+$practical-600: map_get($practical, '600');
+$practical-700: map_get($practical, '700');
+$practical-800: map_get($practical, '800');
+$practical-900: map_get($practical, '900');
+
+// Magic (Green)
+$magic-050: map_get($magic, '050');
+$magic-100: map_get($magic, '100');
+$magic-200: map_get($magic, '200');
+$magic-300: map_get($magic, '300');
+$magic-400: map_get($magic, '400');
+$magic-500: map_get($magic, '500');
+$magic-600: map_get($magic, '600');
+$magic-700: map_get($magic, '700');
+$magic-800: map_get($magic, '800');
+$magic-900: map_get($magic, '900');
+
+// Crimson (Red)
+$crimson-050: map_get($crimson, '050');
+$crimson-100: map_get($crimson, '100');
+$crimson-200: map_get($crimson, '200');
+$crimson-300: map_get($crimson, '300');
+$crimson-400: map_get($crimson, '400');
+$crimson-500: map_get($crimson, '500');
+$crimson-600: map_get($crimson, '600');
+$crimson-700: map_get($crimson, '700');
+$crimson-800: map_get($crimson, '800');
+$crimson-900: map_get($crimson, '900');
+
+// Iron (Grey)
+$iron-025: map_get($iron, '025');
+$iron-050: map_get($iron, '050');
+$iron-100: map_get($iron, '100');
+$iron-200: map_get($iron, '200');
+$iron-300: map_get($iron, '300');
+$iron-400: map_get($iron, '400');
+$iron-500: map_get($iron, '500');
+$iron-600: map_get($iron, '600');
+$iron-700: map_get($iron, '700');
+$iron-800: map_get($iron, '800');
+$iron-900: map_get($iron, '900');
+
+// Brand Primary
+$primary-practical-blue: $practical-900;
+$primary-magic-green: $magic-600;
+$primary-link-blue: $practical-500;
+$primary-spark-red: $crimson-500;
+
+/* UI BACKGROUNDS */
+$steel: #eef3f7;
+$sandstone: #f9f4ea;
+$ground: #e9faf5;
+$brick: #f0e8e9;
+
+/* SECONDARY COLOURS */
+$white: #ffffff;
+$black: #000000;
+
+// Purple
+$electric-100: map_get($electric, '100');
+$electric-200: map_get($electric, '200');
+$electric-300: map_get($electric, '300');
+$electric-400: map_get($electric, '400');
+$electric-500: map_get($electric, '500');
+$electric-600: map_get($electric, '600');
+$electric-700: map_get($electric, '700');
+$electric-800: map_get($electric, '800');
+$electric-900: map_get($electric, '900');
+
+// Yellow
+$energy-050: map_get($energy, '050');
+$energy-100: map_get($energy, '100');
+$energy-200: map_get($energy, '200');
+$energy-300: map_get($energy, '300');
+$energy-400: map_get($energy, '400');
+$energy-500: map_get($energy, '500');
+$energy-600: map_get($energy, '600');
+$energy-700: map_get($energy, '700');
+$energy-800: map_get($energy, '800');
+$energy-900: map_get($energy, '900');
+
+// Lime
+$inch-100: map_get($inch, '100');
+$inch-200: map_get($inch, '200');
+$inch-300: map_get($inch, '300');
+$inch-400: map_get($inch, '400');
+$inch-500: map_get($inch, '500');
+$inch-600: map_get($inch, '600');
+$inch-700: map_get($inch, '700');
+$inch-800: map_get($inch, '800');
+$inch-900: map_get($inch, '900');
+
+// Pink
+$mulberry-100: map_get($mulberry, '100');
+$mulberry-200: map_get($mulberry, '200');
+$mulberry-300: map_get($mulberry, '300');
+$mulberry-400: map_get($mulberry, '400');
+$mulberry-500: map_get($mulberry, '500');
+$mulberry-600: map_get($mulberry, '600');
+$mulberry-700: map_get($mulberry, '700');
+$mulberry-800: map_get($mulberry, '800');
+$mulberry-900: map_get($mulberry, '900');
+
+// Green
+$power-100: map_get($power, '100');
+$power-200: map_get($power, '200');
+$power-300: map_get($power, '300');
+$power-400: map_get($power, '400');
+$power-500: map_get($power, '500');
+$power-600: map_get($power, '600');
+$power-700: map_get($power, '700');
+$power-800: map_get($power, '800');
+$power-900: map_get($power, '900');
+
+// Cyan
+$volt-100: map_get($volt, '100');
+$volt-200: map_get($volt, '200');
+$volt-300: map_get($volt, '300');
+$volt-400: map_get($volt, '400');
+$volt-500: map_get($volt, '500');
+$volt-600: map_get($volt, '600');
+$volt-700: map_get($volt, '700');
+$volt-800: map_get($volt, '800');
+$volt-900: map_get($volt, '900');
+
+// Orange
+$west-100: map_get($west, '100');
+$west-200: map_get($west, '200');
+$west-300: map_get($west, '300');
+$west-400: map_get($west, '400');
+$west-500: map_get($west, '500');
+$west-600: map_get($west, '600');
+$west-700: map_get($west, '700');
+$west-800: map_get($west, '800');
+$west-900: map_get($west, '900');
+
+/* CUSTOM */
+// Modes
+$color-construction: $energy-500;
+$color-estimating: $electric-500;
+
+// Dates
+$color-date-past: $primary-spark-red;
+$color-date-today: $primary-magic-green;
+$color-date-tomorrow: $primary-link-blue;
+$color-date-future: $primary-practical-blue;
+
+// Error
+$color-error: $crimson-600;
+
+// Statuses
+$color-declined: $iron-300;
+$color-interested: $primary-link-blue;
+$color-not-interested: $crimson-600;
+$color-quoted: $primary-magic-green;
+$color-quoting: $west-500;

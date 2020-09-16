@@ -1,0 +1,53 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3717857, 2019-02-10T19:07:34-0500
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Faktum-Medium by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/faktum/medium/
+ *
+ * Webfont: Faktum-Regular by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/faktum/regular/
+ *
+ * Webfont: Faktum-SemiBold by Rene Bieder
+ * URL: https://www.myfonts.com/fonts/rene-bieder/faktum/semi-bold/
+ *
+ *
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3717857
+ * Licensed pageviews: 1,000,000
+ * Webfonts copyright: Copyright &#x00A9; 2018 by Rene Bieder. All rights reserved.
+ *
+ * © 2019 MyFonts Inc
+*/
+
+/* @import must be at top of file, otherwise CSS will not work <- LIES THAT FONT VENDORS TELL YOU */
+/* @import url("//hello.myfonts.net/count/38bae1"); */
+
+@font-face {
+  font-family: 'Faktum';
+  font-style: normal;
+  font-weight: 400;
+  src: url('faktum-regular.eot');
+  src: url('faktum-regular.eot?#iefix') format('embedded-opentype'), url('faktum-regular.woff2') format('woff2'), url('faktum-regular.woff') format('woff'), url('faktum-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Faktum';
+  font-style: normal;
+  font-weight: 500;
+  src: url('faktum-medium.eot');
+  src: url('faktum-medium.eot?#iefix') format('embedded-opentype'), url('faktum-medium.woff2') format('woff2'), url('faktum-medium.woff') format('woff'), url('faktum-medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Faktum';
+  font-style: normal;
+  font-weight: 600;
+  src: url('faktum-semibold.eot');
+  src: url('faktum-semibold.eot?#iefix') format('embedded-opentype'), url('faktum-semibold.woff2') format('woff2'), url('faktum-semibold.woff') format('woff'), url('faktum-semibold.ttf') format('truetype');
+}

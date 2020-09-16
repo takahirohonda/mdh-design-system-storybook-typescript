@@ -1,0 +1,13 @@
+@import 'variables/colours';
+@import 'variables/fonts';
+@import 'variables/spacing';
+
+// Buttons
+$button-border-width: 2px;
+$button-border-radius: 4px;
+
+// Grid
+$grid-column-count: 12;
+$grid-gutter: $spacer-3;
+$breakpoint-md: 40em;
+$breakpoint-lg: 64em;
