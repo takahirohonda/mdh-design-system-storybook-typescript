@@ -24,7 +24,11 @@ module.exports = {
   // Test spec file resolution pattern
   // Matches parent folder `__tests__` and filename
   // should contain `test` or `spec`.
-  testRegex: "(/tests/.*|(\\.|/)|(/src/*)(test|spec))\\.tsx?$",
+
+  // This makes importing css as module possible for unit tests
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
+  },
 
   // Module file extensions for importing
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],

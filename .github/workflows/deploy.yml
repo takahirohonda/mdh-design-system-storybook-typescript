@@ -1,0 +1,33 @@
+name: Deploy to GitHub Page
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - name: Install
+      run: |
+        yarn install
+    - name: Unit-Tests
+      run: |
+        yarn test
+    - name: Build-Storybook
+      run: |
+        yarn build-storybook
+        pwd
+    - name: Deploy_To_GithubPage
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        ACCESS_TOKEN: ${{ secrets.GIT_PAGE_DEPLOY_STYLE_GUIDE }}
+        BRANCH: master # The branch the action should deploy to.
+        FOLDER: storybook-static # The folder the action should deploy.
+        REPOSITORY_NAME: mydatahack/mydatahack.github.io
+        TARGET_FOLDER: design
+        CLEAN: true # Automatically remove deleted files from the deploy branch

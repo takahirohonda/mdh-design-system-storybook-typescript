@@ -12,7 +12,7 @@
     "esModuleInterop": true
   },
   "include" : [
-      "./src/**/*", "reference/js/script.js", "quick-example"
+      "./src/**/*", "Reference/examples"
   ],
   "exclude" : [
       "./src/**/tests/**/*",

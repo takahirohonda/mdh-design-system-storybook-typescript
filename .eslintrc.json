@@ -1,0 +1,72 @@
+{
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true,
+      "impliedStrict": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".tsx"]
+      },
+      "webpack": {
+        "config": "./webpack.config.js"
+      }
+    }
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "@typescript-eslint/explicit-member-accessibility": ["off"],
+    "@typescript-eslint/no-unused-vars": ["off"],
+    "@typescript-eslint/no-untyped-public-signature": ["off"],
+    "@typescript-eslint/no-var-requires": ["off"],
+    "no-use-before-define": [0],
+    "@typescript-eslint/no-use-before-define": [1],
+    "import/extensions": ["error", "ignorePackages", {
+      "ts": "never",
+      "tsx": "never"
+    }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"] }],
+    "import/prefer-default-export": ["off"],
+    "indent": ["error", 2, { "ignoredNodes": ["ConditionalExpression"], "SwitchCase": 1 }],
+    "no-nested-ternary": ["off"],
+    "object-curly-newline": ["off"],
+    "react/button-has-type": ["off"],
+    "react/display-name": ["off"],
+    "react/jsx-boolean-value": ["off"],
+    "react/jsx-closing-bracket-location": ["off"],
+    "react/jsx-filename-extension": ["off", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-indent": ["off"],
+    "react/jsx-one-expression-per-line": ["off"],
+    "react/jsx-props-no-spreading": ["off"],
+    "react/prop-types": ["off"]
+  },
+  "overrides": [
+    {
+      "files": [ "styleguide/components/examples/*" ],
+      "rules": {
+        "react/no-array-index-key": ["off"]
+      }
+    },
+    {
+      "files": [ "**/style.scss.d.ts" ],
+      "rules": {
+        "@typescript-eslint/no-empty-interface": ["off"]
+      }
+    }
+  ]
+}

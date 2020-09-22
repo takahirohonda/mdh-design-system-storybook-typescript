@@ -1,0 +1,371 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Button, ButtonProps } from './Button'
+import { ButtonVariant, ButtonSize } from './enums'
+
+
+<Meta title="Whosfree/Atoms/Button" component={Button} />
+
+# Button
+
+Button stories are based on ButtonVariant. 
+
+The size prop changes the size. isDisabled makes the button disabled. Adding fullWidth prop makes button full-width.
+
+Let's have a look at our buttons✨
+
+## Summary
+<Canvas>
+  <Story 
+  name="Explorer"
+  args={{
+    isDisabled: false,
+    Link: '',
+    onClick: null,
+    size: ButtonSize.Medium,
+    target: '_self',
+    tooltip: 'Hello World',
+    variant: ButtonVariant.Primary,
+    children: 'Button'
+  }}
+  > 
+    {(args) => <Button { ...args } />}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Button} />
+
+## Primary
+<Canvas>
+  <Story name="Primary">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Primary}>Small
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Medium}>Medium
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Primary}>Large
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {true}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Primary}>Disabled
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      fullWidth
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Primary}>Full Width
+    </Button>
+    <br /><br />
+  </Story>
+</Canvas>
+
+## Secondary
+<Canvas>
+  <Story name="Secondary">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Secondary}>Small
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Secondary}>Medium
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Secondary}>Large
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {true}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Secondary}>Disabled
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      fullWidth
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Secondary}>Full Width
+    </Button>
+    <br /><br />
+  </Story>
+</Canvas>
+
+## Grey
+<Canvas>
+  <Story name="Grey">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Grey}>Small
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Grey}>Medium
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Grey}>Large
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {true}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Grey}>Disabled
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      fullWidth
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Grey}>Full Width
+    </Button>
+    <br /><br />
+  </Story>
+</Canvas>
+
+## Red
+<Canvas>
+  <Story name="Red">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Red}>Small
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Red}>Medium
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Red}>Large
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {true}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Red}>Disabled
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      fullWidth
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Red}>Full Width
+    </Button>
+    <br /><br />
+  </Story>
+</Canvas>
+
+## RedOutline
+<Canvas>
+  <Story name="RedOutline">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.RedOutline}>Small
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.RedOutline}>Medium
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.RedOutline}>Large
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {true}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.RedOutline}>Disabled
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      fullWidth
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.RedOutline}>Full Width
+    </Button>
+    <br /><br />
+  </Story>
+</Canvas>
+
+## Transparent
+<Canvas>
+  <Story name="Transparent">
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Transparent}>Small
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Small}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Transparent}>Medium
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Transparent}>Large
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {true}
+      Link = ''
+      onClick = {null}
+      size = {ButtonSize.Large}
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Transparent}>Disabled
+    </Button>
+    <br /><br />
+    <Button
+      isDisabled = {false}
+      Link = ''
+      onClick = {null}
+      fullWidth
+      target = '_self'
+      tooltip = 'Hello World'
+      variant = {ButtonVariant.Transparent}>Full Width
+    </Button>
+    <br /><br />
+  </Story>
+</Canvas>

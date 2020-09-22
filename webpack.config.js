@@ -1,102 +1,72 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const devMode = process.env.NODE_ENV !== 'production';
+
+const cssLoader = {
+  loader: 'css-loader',
+  options: {
+    importLoaders: 1,
+  },
+};
 
 module.exports = (env, argv) => {
   return {
     mode: argv.mode || 'development',
     entry: {
-      // main: './src/quick-example/Index.tsx',
-      main: './src/Index.tsx',
+      main: './src/index.ts',
       // can have multiple entry
       // register: './src/register/Index.tsx'
     },
     output: {
-      filename: '[name]-react.js',
+      filename: 'bundle.js',
       path: path.join(__dirname, '/dist')
-    },
-    resolve: {
-      extensions: ['.ts', '.tsx', '.js']
-    },
-    devServer: {
-      inline: true,
-      contentBase: './public',
-      historyApiFallback: true,
-      port: 3002
-    },
-    devtool: false,
-    optimization: {
-      minimizer: [
-        //
-        new TerserPlugin({
-          parallel: true,
-          sourceMap: true, // Must be set to true if using source-maps in production
-          exclude: /\.(min)\.(js)$/i,
-          terserOptions: {
-            // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
-            // using default options
-          }
-        })
-      ]
     },
     module: {
       rules: [
         {
-          test: /\.(sa|sc|c)ss$/,
+          test: /\.ts(x?)$/,
+          exclude: /node_modules/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader,
+              loader: 'ts-loader',
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', cssLoader],
+        },
+        {
+          test: /(stories).+\.scss$/,
+          loaders: [
+            'style-loader',
+            'css-modules-typescript-loader',
+            {
+              ...cssLoader,
               options: {
-                hmr: process.env.NODE_ENV === 'development',
-                reloadAll: true,
+                modules: true
               },
             },
-            'css-loader',
-            {
-              loader: `postcss-loader`,
-              options: {
-                  options: {},
-              }
-          },
             'sass-loader',
           ],
         },
         {
-          test: /\.[tj]sx?$/,
-          exclude: /node_modules/,
-          loader: 'ts-loader'
+          test: /img.+\.svg$/,
+          loader: 'svg-inline-loader?classPrefix',
         },
         {
-          test: /\.svg$/,
-          loader: 'file-loader'
+          test: /fonts.+\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          }],
         },
-        {
-          test: /\.woff$/,
-          loader: 'url-loader'
-        }
       ]
     },
-    plugins: [
-      new HtmlWebPackPlugin({
-        template: './public/index.html',
-        filename: 'index.html'
-      }),
-      // new CopyWebpackPlugin({
-      //   patterns: [
-      //     {
-      //       from: './public/font/*',
-      //       to: './dist/font'
-      //     }
-      //   ]
-      // }),
-      new MiniCssExtractPlugin({
-        filename: 'react.style.min.css', // devMode ? '[name].css' : '[name].[hash].css',
-        chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-      }),
-    ]
+    resolve: {
+      extensions: ['.js', '.ts', '.tsx'],
+    },
   }
 }
