@@ -2,17 +2,17 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { Source } from '@storybook/addon-docs/blocks';
 import dedent from 'ts-dedent';
 
-import { Col } from './Col';
+import { Row } from './Row';
 import { ExcludeBottomGutter, OffsetOptions, ResponsiveBreakpoints, SpanOptions } from './types';
 import { H1Elem } from '../../../story-helpers/components/H1Elem';
 
-<Meta title="Whosfree/Globals/Col" component={Col} />
+<Meta title="examples/Globals/Row" component={Row} />
 
-# Col
+# Row
 
-Col component✨
+Row component✨
 
-This component is typically used with Row.
+This component is typically used with Col.
 
 <Source
   language='typescript'
@@ -31,16 +31,11 @@ This component is typically used with Row.
   <Story 
   name="Explore"
   args={{
-    alignContentX: 'left',
-    alignContentY: 'top',
-    excludeBottomGutter: false,
-    offset: 0,
-    span: 'auto',
-    children: <H1Elem text='Col' />
+    children: <H1Elem text='Row' />
   }}
   > 
-    {(args) => <Col { ...args } />}
+    {(args) => <Row { ...args } />}
   </Story>
 </Canvas>
 
-<ArgsTable of={Col} />
+<ArgsTable of={Row} />

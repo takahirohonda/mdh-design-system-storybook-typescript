@@ -1,0 +1,218 @@
+
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<!-- {/* <Meta title="Welcome/Introduction" /> */} -->
+# Prototype
+
+# Mdh Design System ✨
+
+This is the FED component for Mdh apps.
+
+As a rule of thumb, we follow regular TypeScript and React conventions when we write components.
+
+## (1) Development Flow
+ 
+We have a design system first approach. Any FED component should be created in the design system first, and then imported as a module.
+<br />
+ 
+## (2) How to create a component
+ 
+The current convention for creating a new component is described below.
+<br />
+ 
+### React Conventions 👑
+<br />
+ 
+#### 1. Basic Principles
+ 
+- We try to minimise the bundle size for performance.
+- We support IE11.
+- Do not add margin when we create components.
+- Keep the component less than 100 lines if possible. If it exceeds more than 150 lines, we need to think about refactoring it.
+- Add change log, versions and follow the release process in README.md at the root of this repo.
+ 
+#### 2. Props
+ 
+- Props for a component should be Type, not interface because our component should be expandable and export the type as well as the component.
+However, use interfaces if there is any case that is suitable.
+```typescript
+export type MyProps = {
+ hidden: boolean,
+ content: text
+}
+```
+ 
+- To limit style customisation, add
+```typescript
+OmitClassName<InputHTMLAttributes<HTMLInputElement>>
+```
+ 
+- Add ...props so that we can extend the html element. Our custom props should be only used for styling purposes.
+```typescript
+export const MyComponent: React.FC<MyComponentPorps> = ({ firstProp, secondProp, ...props }) => { ... }
+```
+ 
+- Use string Enum to limit the prop options.
+ 
+- Enums should live in the same folder as the component. Create a file called enums.ts as below.
+```bash
+ComponentExample # component folder
+ enums.ts # this is the enum file
+ ...
+ ComponentExample.tsx
+ ...
+```
+ 
+- Props should be destructured and add default value for the props that need default value. We should not have default value for unrequired props.
+ 
+- Use React.FC to type props so that children can come without explicitly adding it.
+```typescript
+export const MyComponent: React.FC<MyComponentPorps> = ({ ... }) => { ... }
+```
+ 
+#### 3. Exporting components
+ 
+- We do not use export default. Instead, export the component itself.
+```typescript
+// good
+export const MyComponent: React.FC<MyComponentPorps> = ({ ... }) => { ... }
+ 
+// not good
+const MyComponent: React.FC<MyComponentPorps> = ({ ... }) => { ... }
+export default MyComponent;
+```
+ 
+- Create index.tsx file and export all the components within the same folder.
+- We need to export the component so that it is usable from the same entry point.
+- For subcomponents, we export them with dot notation (see example Slider).
+ 
+#### 4. Approach to Style
+ 
+- We use CSS modules.
+- Use utility joinClassNames when we have conditional class names.
+```typescript
+const classes = joinClassNames(
+ styles.button,
+ styles[size],
+ fullWidth && styles.fullWidth,
+);
+```
+- Create styles.scss file in the same folder and import it in the component.
+```typescript
+import styles from './styles.scss';
+...
+```
+ 
+#### 5. Accessibility
+ 
+- Every input element has a label for accessibility. Make sure to add hidden true or false.
+ 
+#### 6. Syntax preference
+ 
+- Use empty tag (`<>`) instead of `<React.Fragment>`.
+ 
+#### 7. Tools
+ 
+- Keep the React version the same as the main source code.
+- We would like to minimise the use of 3rd party libraries (e.g. do not use Bootstrap, jQuery, lodash and so on).
+- Use yarn.
+ 
+#### 8. Polyfills
+ 
+- We need to be explicit about which polyfills to be used if it is necessary.
+- Import it in the entry file.
+ 
+#### 9. Naming convention
+ 
+- camelCase for variables.
+- PascalCase for component names and enums.
+- UPPER_SNAKE_CASE for constant name.
+ 
+<br />
+ 
+### SCSS Conventions 💄
+ 
+#### 1. Syntax
+ 
+- camelCase for className. This is because it makes it easier to use the dot notation (e.g. styel.myClassName).
+- To extend class name, use double underscore (e.g. &__supersize)
+ 
+#### 2. Coding guide
+ 
+- Do not hard code any value. Use variables.
+ 
+```scss
+$loader-width: 60px;
+ 
+.div {
+ width: $loder-width
+}
+```
+ 
+- Do not repeat the properties. Use mixins. Example below is when we use transform to add wider browser support.
+ 
+```scss
+@mixin transformCrossBrowsers($property) {
+ -webkit-transform: $property;
+ -ms-transform: $property;
+ transform: $property;
+}
+ 
+.div {
+  @include transformCrossBrowsers(rotateY(0deg));
+}
+```
+ 
+### Storybook Conventions 📖
+ 
+We are using Storybook v7. Many changes happen in v6.
+Some of the old APIs have been deprecated.
+As a rule of thumb, we use the convention recommended for v6 and above.
+ 
+#### 1. General rules
+ 
+- We prefer not to use outdated APIs like StoryOf.
+- We use mdx for stories.
+ 
+#### 2. Folder structure
+ 
+- Here is our folder structure.
+ 
+```bash
+.github/workflows # This is where github action script lives
+ 
+.storybook # storybook configuration folder
+ estimateOneTheme.js # Custom storybook theme for EstimateOne
+ main.js # Main config - if you need to add addons, this is the file you need to update
+ manager-head.html # Inject elements globally. This is where titles and favicons are.
+ manager.js # Setting custom config
+ preview-head.html # Inject head to preview page
+ preview.js # Anything that affects globally for Canvas and Docs goes here.
+ 
+scr
+ stories
+   components # This is where we add components
+     atoms
+       ...
+     globals
+       ...
+     molecules
+       ...
+     welcome
+       contributionGuide.stories.mdx # This is the file for this contribution guide.
+       ...
+     index.ts # For exporting components
+   css # where variables and mixins live
+     ...
+   fonts
+     ...
+   img
+     ...
+   story-helpers # where react components to style canvas live
+     ...
+ types # where global types live
+   ...
+ utils # where utility functions live
+   ...
+ index.ts # entrypoint
+```

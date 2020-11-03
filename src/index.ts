@@ -1,3 +1,3 @@
-export * from './stories/whosfree/components';
-export * from './stories/whosfree/utils';
-export * from './stories/whosfree/types';
+export * from './stories/examples/components';
+export * from './stories/examples/utils';
+export * from './stories/examples/types';
