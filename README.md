@@ -15,7 +15,7 @@ Mdh Design System with Storybook🤟💀🤟
 yarn install
 
 # start
-yarn start
+yarn storybook
 
 # run unit test
 yarn test
@@ -42,7 +42,7 @@ Now you can open [http://localhost:3001](http://localhost:3001) in your browser.
 components referenced in the styleguide will trigger live reloads thanks to the wonderful 
 `webpack-dev-server`
 
-# (1) Adding to this repo
+## (1) Adding to this repo
 
 If you wish to introduce changes to this repo, there are a few steps that should be followed.
 - Ensure your changes are outlined in CHANGELOG.md as per the 

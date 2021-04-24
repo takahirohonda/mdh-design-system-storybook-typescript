@@ -12,9 +12,10 @@ export default create({
   appBorderColor: 'grey',
   appBorderRadius: 4,
 
-  // Typography
-  fontBase: '"Open Sans", sans-serif',
-  fontCode: 'monospace',
+  // Typography - it defines the font for canvas
+  // Instead of stock standard font, we are using the custom font for camvas
+  // fontBase: '"Open Sans", sans-serif',
+  // fontCode: 'monospace',
 
   // Text colors
   textColor: 'white',

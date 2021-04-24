@@ -4,7 +4,7 @@
   "description": "Mdh Design System with Storybook",
   "main": "index.js",
   "scripts": {
-    "start": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "devbuild": "webpack --mode development",
     "build": "webpack --mode production",

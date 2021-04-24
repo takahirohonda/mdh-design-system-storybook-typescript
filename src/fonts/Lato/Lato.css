@@ -1,0 +1,46 @@
+/* uaing style linking
+se the same font-family name multiple times, setting the weights and styles 
+in each @font-face declaration to match the weight and style of the Web font file being accessed
+*/
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./Lato-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url('./Lato-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./Lato-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url('./Lato-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: url('./Lato-Light.ttf') format('truetype');
+}
