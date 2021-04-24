@@ -1,3 +1,3 @@
-export * from './stories/examples/components';
-export * from './stories/examples/utils';
-export * from './stories/examples/types';
+export * from './components/examples/components';
+export * from './components/examples/utils';
+export * from './components/examples/types';
