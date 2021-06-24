@@ -1,0 +1,39 @@
+@import '../../../css/variables';
+@import '../../../css/mixins';
+
+.paragraph {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  @include hidden;
+}
+
+.intro {
+  font: $font-intro;
+}
+
+.heavy {
+  font: $font-p-heavy;
+}
+
+.regular {
+  font: $font-p-reg;
+}
+
+.heavySmall {
+  font: $font-ps-heavy;
+}
+
+.regularSmall {
+  font: $font-ps-reg;
+}
+
+.heavyTiny {
+  font: $font-tiny-heavy;
+}
+
+.regularTiny {
+  font: $font-tiny-reg;
+}
