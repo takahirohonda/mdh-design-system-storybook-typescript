@@ -1,3 +1,3 @@
-// to be implemented
+import React from 'react';
 
-export const Col = () => <div />;
+export const Col = () => <div>Col</div>;
