@@ -13,6 +13,8 @@ module.exports = (env, argv) => {
     mode: argv.mode || 'development',
     entry: {
       main: './src/index.ts',
+      // preset: './src/addon/preset.ts',
+      // register: './src/addon/reister.ts'
       // can have multiple entry
       // register: './src/register/Index.tsx'
     },

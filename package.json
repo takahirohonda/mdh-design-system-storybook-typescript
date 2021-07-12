@@ -27,7 +27,6 @@
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/addon-storysource": "^6.2.9",
-    "@storybook/addons": "^6.2.9",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.2.9",
     "@storybook/theming": "^6.2.9",
@@ -81,6 +80,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@storybook/addons": "^6.3.4",
+    "@storybook/components": "^6.3.4",
     "identity-obj-proxy": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
