@@ -23,7 +23,7 @@ jobs:
         yarn build-storybook
         pwd
     - name: Deploy_To_GithubPage
-      uses: JamesIves/github-pages-deploy-action@3.5.9
+      uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
         ACCESS_TOKEN: ${{ secrets.GIT_PAGE_DEPLOY_STYLE_GUIDE }}
         BRANCH: master # The branch the action should deploy to.
