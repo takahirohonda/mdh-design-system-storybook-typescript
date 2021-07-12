@@ -1,0 +1,110 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Paragraph } from './'
+import { ParagraphVariant } from './enums';
+
+<Meta title="WhosFree/Global/Paragraph" component={Paragraph} />
+
+# Paragraph
+
+Paragraph component should be used instead of `<p>`.
+
+## Summary
+
+<Canvas>
+  <Story
+    name="Explorer"
+    args={{
+      variant: ParagraphVariant.Regular,
+      children: 'The wizard quickly jinxed the gnomes before they vaporized'
+    }}
+  >
+   {(args) => <Paragraph { ...args } />}
+  </Story>
+</Canvas>
+
+<ArgsTable of={Paragraph} />
+
+## Intro
+
+<Canvas>
+  <Story name="Intro">
+    <Paragraph 
+      variant={ParagraphVariant.Intro}
+    >
+      The five boxing wizards jump quickly
+    </Paragraph>
+  </Story>
+</Canvas>
+
+## P - Heavy
+
+<Canvas>
+  <Story name="P - Heavy">
+    <Paragraph 
+      variant={ParagraphVariant.Heavy}
+    >
+      The five boxing wizards jump quickly
+    </Paragraph>
+  </Story>
+</Canvas>
+
+## P - Regular
+
+<Canvas>
+  <Story name="P - Regular">
+    <Paragraph 
+      variant={ParagraphVariant.Regular}
+    >
+      The five boxing wizards jump quickly
+    </Paragraph>
+  </Story>
+</Canvas>
+
+## Ps - Heavy
+
+<Canvas>
+  <Story name="Ps - Heavy">
+    <Paragraph 
+      variant={ParagraphVariant.HeavySmall}
+    >
+      The five boxing wizards jump quickly
+    </Paragraph>
+  </Story>
+</Canvas>
+
+## Ps - Regular
+
+<Canvas>
+  <Story name="Ps - Regular">
+    <Paragraph 
+      variant={ParagraphVariant.RegularSmall}
+    >
+      The five boxing wizards jump quickly
+    </Paragraph>
+  </Story>
+</Canvas>
+
+## Tiny - Heavy
+
+<Canvas>
+  <Story name="Tiny - Heavy">
+    <Paragraph 
+      variant={ParagraphVariant.HeavyTiny}
+    >
+      The five boxing wizards jump quickly
+    </Paragraph>
+  </Story>
+</Canvas>
+
+## Tiny - Regular
+
+<Canvas>
+  <Story name="Tiny - Regular">
+    <Paragraph 
+      variant={ParagraphVariant.RegularTiny}
+    >
+      The five boxing wizards jump quickly
+    </Paragraph>
+  </Story>
+</Canvas>
+
