@@ -6,10 +6,10 @@ interface CssExports {
   'heavyTiny': string;
   'hidden': string;
   'intro': string;
+  'paragraph': string;
   'regular': string;
   'regularSmall': string;
   'regularTiny': string;
-  'text': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
