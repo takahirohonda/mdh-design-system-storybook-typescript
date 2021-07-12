@@ -1,6 +1,7 @@
+@use 'sass:math';
 @import '../../css/variables';
 
-$half-gutter: $grid-gutter/2;
+$half-gutter: math.div($grid-gutter, 2);
 
 .row {
   margin: 0 #{-$half-gutter};
@@ -75,8 +76,8 @@ $column-slug: col !default;
   @if ($span == auto) {
     flex: auto;
   } @else {
-    max-width: (100% / $grid-column-count) * $span;
-    flex: 0 0 ((100% / $grid-column-count) * $span);
+    max-width: math.div(100%, $grid-column-count) * $span;
+    flex: 0 0 (math.div(100%, $grid-column-count) * $span);
   }
 }
 
@@ -110,7 +111,7 @@ $offset-slug: offset !default;
   @if ($span == 0) {
     margin-left: 0;
   } @else {
-    margin-left: (100% / $grid-column-count) * $span;
+    margin-left: math.div(100%, $grid-column-count) * $span;
   }
 }
 

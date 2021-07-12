@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../../css/variables';
 @import '../../css/mixins';
 
@@ -37,17 +38,17 @@ $loader-perspective: 3000px;
 
 .loader3dFaceFront {
   background-color: $practical-900;
-  @include transformCrossBrowsers(rotateY(0deg) translateZ(#{$loader-width / 2}));
+  @include transformCrossBrowsers(rotateY(0deg) translateZ(#{math.div($loader-width, 2)}));
 }
 
 .loader3dFaceRight {
   background-color: $magic-600;
-  @include transformCrossBrowsers(rotateY(90deg) translateZ(#{$loader-width / 2}));
+  @include transformCrossBrowsers(rotateY(90deg) translateZ(#{math.div($loader-width, 2)}));
 }
 
 .loader3dFaceBack {
   background-color: $practical-900;
-  @include transformCrossBrowsers(rotateY(180deg) translateZ(#{$loader-width / 2}));
+  @include transformCrossBrowsers(rotateY(180deg) translateZ(#{math.div($loader-width, 2)}));
 }
 
 

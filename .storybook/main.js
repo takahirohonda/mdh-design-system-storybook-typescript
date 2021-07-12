@@ -17,13 +17,24 @@ module.exports = {
       name: '@storybook/addon-docs',
       options: { configureJSX: true },
     },
-    {
-      name: '@storybook/preset-scss',
-      options: {
-        cssLoaderOptions: {
-          modules: true
-        }
-      } 
-    }
-  ]
+  ],
+  webpackFinal: async config => {
+    config.module.rules.push({
+      test: /(src|styleguide).+\.scss$/,
+      loaders: [
+        'style-loader',
+        'css-modules-typescript-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            modules: true,
+          },
+        },
+        'sass-loader',
+      ],
+    });
+
+    return config;
+  },
 }

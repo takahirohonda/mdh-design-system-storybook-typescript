@@ -36,7 +36,7 @@ module.exports = (env, argv) => {
           use: ['style-loader', cssLoader],
         },
         {
-          test: /\.scss$/,
+          test: /src.+\.scss$/,
           loaders: [
             'style-loader',
             'css-modules-typescript-loader',
