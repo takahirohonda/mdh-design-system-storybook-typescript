@@ -1,0 +1,53 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'; 
+import { RocketIllustration } from './RocketIllustration';
+import { IllustrationSize } from '../IllustrationContainer';
+
+<Meta title="Atoms/Graphics/Illustrations/Rocket" component={RocketIllustration} />
+
+# Rocket
+
+## Summary
+
+<Canvas>
+  <Story
+  name="Explorer"
+  args={{
+  }}
+  >
+    {(args) => (
+      <RocketIllustration {...args} />
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable of={RocketIllustration} />
+
+## Small
+
+<Canvas>
+  <Story name="Small">
+    <RocketIllustration
+      size={IllustrationSize.Small}
+    />
+  </Story>
+</Canvas>
+
+## Medium
+
+<Canvas>
+  <Story name="Medium">
+    <RocketIllustration
+      size={IllustrationSize.Medium}
+    />
+  </Story>
+</Canvas>
+
+## Large
+
+<Canvas>
+  <Story name="Large">
+    <RocketIllustration
+      size={IllustrationSize.Large}
+    />
+  </Story>
+</Canvas>
