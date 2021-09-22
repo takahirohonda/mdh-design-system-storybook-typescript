@@ -5,18 +5,20 @@ module.exports = {
   ],
   addons: [
     "@storybook/addon-links",
+    {
+      name: '@storybook/addon-docs',
+      options: { configureJSX: true },
+    },
     "@storybook/addon-essentials",
     "@storybook/addon-a11y",
+    // "../src/addon/preset.js",
     {
       name: "@storybook/addon-storysource",
       loaderOptions: {
         prettierConfig: { printWidth: 80, singleQuote: false },
       }
     },
-    {
-      name: '@storybook/addon-docs',
-      options: { configureJSX: true },
-    },
+    
   ],
   webpackFinal: async config => {
     config.module.rules.push({
