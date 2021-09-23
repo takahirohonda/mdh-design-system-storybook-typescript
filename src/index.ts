@@ -1,3 +1,3 @@
-export * from './components/examples/components';
-export * from './components/examples/utils';
-export * from './components/examples/types';
+export * from './components';
+export * from './utils';
+export * from './types';
