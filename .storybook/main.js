@@ -10,7 +10,17 @@ module.exports = {
     {
       name: "@storybook/addon-storysource",
       loaderOptions: {
-        prettierConfig: { printWidth: 80, singleQuote: false },
+        prettierConfig: {
+          arrowParens: 'always',
+          printWidth: 120,
+          tabWidth: 2,
+          useTabs: false,
+          semi: true,
+          singleQuote: true,
+          trailingComma: 'all',
+          bracketSpacing: true,
+          jsxBracketSameLine: false,
+        },
       }
     },
     {

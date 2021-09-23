@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'; 
+import { CalendarIllustration } from './CalendarIllustration';
+import { IllustrationSize } from '../IllustrationContainer';
+
+<Meta title="Atoms/Graphics/Illustrations/Rocket" component={CalendarIllustration} />
+
+# Calendar
+
+Calendar illustration component.
+
+## Summary
+
+<Canvas>
+  <Story
+  name="Explorer"
+  args={{
+  }}
+  >
+    {(args) => (
+      <RocketIllustration {...args} />
+    )}
+  </Story>
+</Canvas>
+
+<ArgsTable of={CalendarIllustration} />
+
+## Small
+
+<Canvas>
+  <Story name="Small">
+    <CalendarIllustration
+      size={IllustrationSize.Small}
+    />
+  </Story>
+</Canvas>
+
+## Medium
+
+<Canvas>
+  <Story name="Medium">
+    <CalendarIllustration
+      size={IllustrationSize.Medium}
+    />
+  </Story>
+</Canvas>
+
+## Large
+
+<Canvas>
+  <Story name="Large">
+    <CalendarIllustration
+      size={IllustrationSize.Large}
+    />
+  </Story>
+</Canvas>
