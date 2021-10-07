@@ -1,13 +1,14 @@
-@use 'sass:math';
 @import '../../css/variables';
 @import '../../css/mixins';
 
-// size
 $loader-container-size: 80px;
 $loader-width: 48px;
 $loader-height: 16px;
 $loader-perspective: 2000px;
 $loader-speed: 1.5s;
+$cube-face-offset-z: $loader-width/2;
+$cube-offset-x: $loader-width/3;
+$cube-offset-y: $loader-height/2;
 
 .loader3dContainer {
   position: absolute;
@@ -24,7 +25,7 @@ $loader-speed: 1.5s;
   height: $loader-height;
   transform-style: preserve-3d;
   perspective: $loader-perspective;
-  animation-name: loader-middle;
+  animation-name: loader-3d-move;
   animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -38,21 +39,21 @@ $loader-speed: 1.5s;
 }
 
 .loader3dFaceFront {
-  @include transformCrossBrowsers(rotateY(0deg) translateZ(#{math.div($loader-width, 2)}));
+  @include transformCrossBrowsers(rotateY(0deg) translateZ($cube-face-offset-z));
   background-color: $practical-900;
 }
 
 .loader3dFaceRight {
-  @include transformCrossBrowsers(rotateY(90deg) translateZ(#{math.div($loader-width, 2)}));
+  @include transformCrossBrowsers(rotateY(90deg) translateZ($cube-face-offset-z));
   background-color: $magic-600;
 }
 
 .loader3dFaceBack {
-  @include transformCrossBrowsers(rotateY(180deg) translateZ(#{math.div($loader-width, 2)}));
+  @include transformCrossBrowsers(rotateY(180deg) translateZ($cube-face-offset-z));
   background-color: $practical-900;
 }
 
-@keyframes loader-middle {
+@keyframes loader-3d-move {
   0% {
     @include transformCrossBrowsers(rotateY(0deg));
   }
@@ -64,7 +65,7 @@ $loader-speed: 1.5s;
 
 /* loader top */
 .loader3dTopOuter {
-  @include transformCrossBrowsers(translateX(20px) translateY(-10px));
+  @include transformCrossBrowsers(translateX($cube-offset-x) translateY(-($cube-offset-y)));
   animation-name: loader-top-outer-move;
   animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
@@ -73,7 +74,7 @@ $loader-speed: 1.5s;
 
 @keyframes loader-top-outer-move {
   0% {
-    @include transformCrossBrowsers(translateX(20px) translateY(-10px));
+    @include transformCrossBrowsers(translateX($cube-offset-x) translateY(-($cube-offset-y)));
   }
 
   40% {
@@ -85,7 +86,7 @@ $loader-speed: 1.5s;
   }
 
   100% {
-    @include transformCrossBrowsers(translateX(20px) translateY(-10px));
+    @include transformCrossBrowsers(translateX($cube-offset-x) translateY(-($cube-offset-y)));
   }
 }
 
@@ -94,7 +95,7 @@ $loader-speed: 1.5s;
   height: $loader-height;
   transform-style: preserve-3d;
   perspective: $loader-perspective;
-  animation-name: loader-middle;
+  animation-name: loader-3d-move;
   animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -102,7 +103,7 @@ $loader-speed: 1.5s;
 
 /* loader bottom */
 .loader3dBottomOuter {
-  @include transformCrossBrowsers(translateX(-20px) translateY(10px));
+  @include transformCrossBrowsers(translateX(-($cube-offset-x)) translateY($cube-offset-y));
   animation-name: loader-bottom-outer-move;
   animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
@@ -111,7 +112,7 @@ $loader-speed: 1.5s;
 
 @keyframes loader-bottom-outer-move {
   0% {
-    @include transformCrossBrowsers(translateX(-20px) translateY(10px));
+    @include transformCrossBrowsers(translateX(-($cube-offset-x)) translateY($cube-offset-y));
   }
 
   40% {
@@ -123,7 +124,7 @@ $loader-speed: 1.5s;
   }
 
   100% {
-    @include transformCrossBrowsers(translateX(-20px) translateY(10px));
+    @include transformCrossBrowsers(translateX(-($cube-offset-x)) translateY($cube-offset-y));
   }
 }
 
@@ -133,7 +134,7 @@ $loader-speed: 1.5s;
   height: $loader-height;
   transform-style: preserve-3d;
   perspective: $loader-perspective;
-  animation-name: loader-middle;
+  animation-name: loader-3d-move;
   animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
