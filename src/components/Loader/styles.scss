@@ -3,10 +3,11 @@
 @import '../../css/mixins';
 
 // size
-$loader-container-size: 100px;
-$loader-width: 60px;
-$loader-height: 20px;
-$loader-perspective: 3000px;
+$loader-container-size: 80px;
+$loader-width: 48px;
+$loader-height: 16px;
+$loader-perspective: 2000px;
+$loader-speed: 1.5s;
 
 .loader3dContainer {
   position: absolute;
@@ -24,7 +25,7 @@ $loader-perspective: 3000px;
   transform-style: preserve-3d;
   perspective: $loader-perspective;
   animation-name: loader-middle;
-  animation-duration: 1.3s;
+  animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -65,7 +66,7 @@ $loader-perspective: 3000px;
 .loader3dTopOuter {
   @include transformCrossBrowsers(translateX(20px) translateY(-10px));
   animation-name: loader-top-outer-move;
-  animation-duration: 1.3s;
+  animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -94,7 +95,7 @@ $loader-perspective: 3000px;
   transform-style: preserve-3d;
   perspective: $loader-perspective;
   animation-name: loader-middle;
-  animation-duration: 1.3s;
+  animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -103,7 +104,7 @@ $loader-perspective: 3000px;
 .loader3dBottomOuter {
   @include transformCrossBrowsers(translateX(-20px) translateY(10px));
   animation-name: loader-bottom-outer-move;
-  animation-duration: 1.3s;
+  animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
@@ -133,7 +134,7 @@ $loader-perspective: 3000px;
   transform-style: preserve-3d;
   perspective: $loader-perspective;
   animation-name: loader-middle;
-  animation-duration: 1.3s;
+  animation-duration: $loader-speed;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
