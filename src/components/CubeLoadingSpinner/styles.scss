@@ -1,0 +1,118 @@
+/*
+Note: math.div is better becausre of the deprecation warning:
+DEPRECATION WARNING: Using / for division is deprecated and will be removed in Dart Sass 2.0.0.
+Recommendation: math.div($loader-width, 3)
+More info and automated migrator: https://sass-lang.com/d/slash-div
+*/
+
+@use 'sass:math';
+@import '../../css/variables';
+@import '../../css/mixins';
+
+@mixin spinnerAnimationControl ($animation-name) {
+  animation-name: $animation-name;
+  animation-duration: $spinner-speed;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+$spinner-width: 32px;
+$spinner-height: math.div($spinner-width, 3);
+$spinner-container-size: $spinner-width;
+$spinner-perspective: 2000px;
+$spinner-speed: 1.5s;
+$cube-face-offset-z: math.div($spinner-width, 2);
+$cube-offset-x: math.div($spinner-width, 3);
+$cube-offset-y: math.div($spinner-height, 2);
+
+.spinner3dContainer {
+  width: $spinner-container-size;
+  margin: auto;
+}
+
+.spinner3dFaceGroup {
+  @include spinnerAnimationControl(spinner-3d-move);
+  position: relative;
+  width: $spinner-width;
+  height: $spinner-height;
+  transform-style: preserve-3d;
+  perspective: $spinner-perspective;
+}
+
+.spinner3dFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.spinner3dFaceFront {
+  @include transformCrossBrowsers(rotateY(0deg) translateZ($cube-face-offset-z));
+  background-color: $practical-900;
+}
+
+.spinner3dFaceRight {
+  @include transformCrossBrowsers(rotateY(90deg) translateZ($cube-face-offset-z));
+  background-color: $magic-600;
+}
+
+.spinner3dFaceBack {
+  @include transformCrossBrowsers(rotateY(180deg) translateZ($cube-face-offset-z));
+  background-color: $practical-900;
+}
+
+@keyframes spinner-3d-move {
+  0% {
+    @include transformCrossBrowsers(rotateY(0deg));
+  }
+
+  100% {
+    @include transformCrossBrowsers(rotateY(-180deg));
+  }
+}
+
+.spinner3dTopOuter {
+  @include transformCrossBrowsers(translateX($cube-offset-x) translateY(-($cube-offset-y)));
+  @include spinnerAnimationControl(spinner-top-outer-move);
+}
+
+@keyframes spinner-top-outer-move {
+  0% {
+    @include transformCrossBrowsers(translateX($cube-offset-x) translateY(-($cube-offset-y)));
+  }
+
+  40% {
+    @include transformCrossBrowsers(translateX(0) translateY(0));
+  }
+
+  60% {
+    @include transformCrossBrowsers(translateX(0) translateY(0));
+  }
+
+  100% {
+    @include transformCrossBrowsers(translateX($cube-offset-x) translateY(-($cube-offset-y)));
+  }
+}
+
+.spinner3dBottomOuter {
+  @include transformCrossBrowsers(translateX(-($cube-offset-x)) translateY($cube-offset-y));
+  @include spinnerAnimationControl(spinner-bottom-outer-move);
+}
+
+@keyframes spinner-bottom-outer-move {
+  0% {
+    @include transformCrossBrowsers(translateX(-($cube-offset-x)) translateY($cube-offset-y));
+  }
+
+  40% {
+    @include transformCrossBrowsers(translateX(0) translateY(0));
+  }
+
+  60% {
+    @include transformCrossBrowsers(translateX(0) translateY(0));
+  }
+
+  100% {
+    @include transformCrossBrowsers(translateX(-($cube-offset-x)) translateY($cube-offset-y));
+  }
+}
