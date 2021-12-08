@@ -188,7 +188,7 @@ When we don't bind show code looks good.
 
 
 ```bash
-yarn add commitlint semantic-release @semantic-release/changelog @semantic-release/git husky -D
+yarn add commitlint semantic-release @semantic-release/changelog @semantic-release/git @commitlint/cli husky -D
 
 yarn add rollup @rollup/plugin-commonjs @rollup/plugin-node-resolve @rollup/plugin-typescript rollup-plugin-analyzer rollup-plugin-postcss rollup-plugin-rename rollup-plugin-rename-node-modules rollup-plugin-visualizer -D
 ```
@@ -196,3 +196,78 @@ yarn add rollup @rollup/plugin-commonjs @rollup/plugin-node-resolve @rollup/plug
 rollup doesn't support commonjs in tsconfig
 
 use `esnext` as target
+
+
+```yml
+name: Production Build and Release
+on:
+  push:
+    branches: 
+      - master
+      - beta
+jobs:
+  run-build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [14.x]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Build artefact
+        run: |
+          yarn install
+          yarn build
+  run-quality:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [14.x]
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Run linter and tests
+        run: |
+          yarn install
+          yarn lint
+          yarn test:coverage
+        env:
+          CI: true
+
+  run-release:
+    needs: [run-build, run-quality]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [14.x]
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@arheio'
+    - name: Install and build
+      run: |
+        yarn install
+        yarn build
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+```

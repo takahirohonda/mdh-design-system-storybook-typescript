@@ -30,7 +30,7 @@ const updateRepoPlugin = [
 
 const publishPackagePlugin = [
   '@semantic-release/npm', {
-    'npmPublish': false
+    // 'npmPublish': false
   }
 ];
 
