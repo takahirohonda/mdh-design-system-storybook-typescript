@@ -271,3 +271,49 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 ```
+
+
+```json
+
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "module": "ESNext",
+    "target": "es6",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
+
+
+{
+  "compilerOptions": {
+    "types": ["jest", "node"],
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "esnext",
+    "target": "es2015",
+    "jsx": "react",
+    "skipLibCheck" : true,
+    "esModuleInterop": true
+  },
+  "include" : [
+      "./src/**/*",
+  ],
+  "exclude" : [
+      "./src/**/tests/**/*",
+      "node_modules"
+  ]
+}
+```

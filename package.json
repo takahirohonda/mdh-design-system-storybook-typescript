@@ -2,7 +2,10 @@
   "name": "mdh-design-system-storybook",
   "version": "1.0.1",
   "description": "Mdh Design System with Storybook",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build:package": "yarn run clean ; rollup -c rollup.config.js",
     "analyse:package": "yarn run clean ; export ANALYZE=true || set ANALYZE=true&&rollup -c rollup.config.js",
