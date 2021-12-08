@@ -51,6 +51,6 @@ module.exports = {
   ],
   branches: [
     'master',
-    { name: 'beta', prerelease: true },
+    { name: 'Add-npm-module-capability', prerelease: true },
   ],
 }
