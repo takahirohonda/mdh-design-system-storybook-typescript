@@ -274,7 +274,6 @@ jobs:
 
 
 ```json
-
 {
   "compilerOptions": {
     "outDir": "./dist/",
