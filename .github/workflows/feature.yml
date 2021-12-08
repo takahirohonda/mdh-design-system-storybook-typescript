@@ -4,26 +4,26 @@ on:
     branches-ignore:
       - 'master'
 jobs:
-  test-and-build-feature-branch:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        persist-credentials: false
+  # test-and-build-feature-branch:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
+  #     with:
+  #       persist-credentials: false
 
-    - name: Install
-      run: |
-        yarn install
-    - name: Unit-Tests
-      run: |
-        yarn test
-    - name: Build-Storybook
-      run: |
-        yarn build-storybook
-        pwd
+  #   - name: Install
+  #     run: |
+  #       yarn install
+  #   - name: Unit-Tests
+  #     run: |
+  #       yarn test
+  #   - name: Build-Storybook
+  #     run: |
+  #       yarn build-storybook
+  #       pwd
   run-release:
-    needs: [test-and-build-feature-branch]
+    # needs: [test-and-build-feature-branch]
     runs-on: ubuntu-latest
     strategy:
       matrix:
