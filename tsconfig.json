@@ -4,7 +4,6 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "noImplicitAny": true,
-    "strict": true,
     "module": "ESNext",
     "target": "es6",
     "jsx": "react",
