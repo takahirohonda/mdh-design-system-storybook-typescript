@@ -178,3 +178,21 @@ When we don't bind show code looks good.
   </Story>
 </Canvas>
 ```
+
+# Making npm package
+
+- Semantic release - for version control for npm package.
+- commitizen - provide cli to format commit message for semantic release.
+- husky & commit lint - commit lint is the linter for commit, husky is the commit hook library (run on commit and pass the info to cli to check if pass or not).
+- rollup - webpack is for application and rollup config is more friendly.
+
+
+```bash
+yarn add commitlint semantic-release @semantic-release/changelog @semantic-release/git husky -D
+
+yarn add rollup @rollup/plugin-commonjs @rollup/plugin-node-resolve @rollup/plugin-typescript rollup-plugin-analyzer rollup-plugin-postcss rollup-plugin-rename rollup-plugin-rename-node-modules rollup-plugin-visualizer -D
+```
+
+rollup doesn't support commonjs in tsconfig
+
+use `esnext` as target

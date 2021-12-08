@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+MESSAGE=$1
+
+lint_commit() {
+  node_modules/.bin/commitlint --edit "$1"
+}
+
+if lint_commit $MESSAGE; then
+  echo 'Message passed linting, skipping cli...'
+else
+  exec < /dev/tty && node_modules/.bin/cz --hook || exit 1
+fi
