@@ -6,6 +6,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
+  "repository": "git@github.com:mydatahack/mdh-design-system-storybook-typescript.git",
   "scripts": {
     "build:package": "yarn run clean ; rollup -c rollup.config.js",
     "analyse:package": "yarn run clean ; export ANALYZE=true || set ANALYZE=true&&rollup -c rollup.config.js",
