@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.0.0...v1.0.1) (2021-12-09)
+
+
+### Bug Fixes
+
+* enabled ts compiler strict option ([d29279c](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/d29279cd63c9855fc26300944155a9de5ec17485))
+
 # 1.0.0 (2021-12-09)
 
 
