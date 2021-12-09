@@ -51,6 +51,7 @@ module.exports = {
   ],
   branches: [
     'master',
+    // if you want to release from the branch, we can type the branch name here
     { name: 'Add-npm-module-capability', prerelease: true },
   ],
 }
