@@ -47,5 +47,3 @@ It will release a new node module upon merging to master.
 git add .
 yarn commit
 ```
-
-
