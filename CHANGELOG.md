@@ -1,3 +1,11 @@
+# [1.0.0-Add-npm-module-capability.3](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.0.0-Add-npm-module-capability.2...v1.0.0-Add-npm-module-capability.3) (2021-12-09)
+
+
+### Bug Fixes
+
+* doc update testing pipeline ([e34e0a8](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/e34e0a83a342167bdaffdfad9b743488cc868416))
+* update pipeline ([d7bb288](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/d7bb2888a9564134693d131ea92d573527da4898))
+
 # [1.0.0-Add-npm-module-capability.2](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.0.0-Add-npm-module-capability.1...v1.0.0-Add-npm-module-capability.2) (2021-12-09)
 
 
