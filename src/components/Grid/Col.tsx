@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
 import { joinClassNames } from '../../utils';
 import styles from './styles.scss';
@@ -41,7 +42,7 @@ const getSpanClasses = (
 };
 
 const getOffsetClasses = (
-  value?: OffsetOptions | ResponsiveBreakpoints<OffsetOptions>,
+  value: OffsetOptions | ResponsiveBreakpoints<OffsetOptions>,
 ) => {
   const classes = [] as string[];
   const prefix = 'offset';
@@ -51,12 +52,15 @@ const getOffsetClasses = (
   }
 
   if (value && typeof value === 'object') {
+    // @ts-ignore
     if (value.sm >= 0) {
       classes.push(styles[`${prefix}-sm--${value.sm}` as CssClass]);
     }
+    // @ts-ignore
     if (value.md >= 0) {
       classes.push(styles[`${prefix}-md--${value.md}` as CssClass]);
     }
+    // @ts-ignore
     if (value.lg >= 0) {
       classes.push(styles[`${prefix}-lg--${value.lg}` as CssClass]);
     }
@@ -101,8 +105,11 @@ export const Col: React.FC<ColProps> = ({
   <div className={
     joinClassNames(
       styles.col,
+      // @ts-ignore
       getSpanClasses(span),
+      // @ts-ignore
       getOffsetClasses(offset),
+      // @ts-ignore
       alignContentX && styles[`align__x--${alignContentX}` as CssClass],
       alignContentY && styles[`align__y--${alignContentY}` as CssClass],
       getGutterExclusionClasses(excludeBottomGutter),

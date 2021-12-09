@@ -19,10 +19,10 @@ export const Button: React.FC<ButtonProps> = ({
   fullWidth = false,
   isDisabled = false,
   link = '',
-  onClick = null,
+  onClick,
   size = ButtonSize.Medium,
   target = '_self',
-  tooltip = null,
+  tooltip,
   variant = ButtonVariant.Primary,
 }) => {
   const classes = joinClassNames(
