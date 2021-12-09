@@ -1,5 +1,5 @@
 {
-  "name": "mdh-design-system-storybook",
+  "name": "@mydatahack/mdh-design-system-storybook",
   "version": "1.0.0-Add-npm-module-capability.1",
   "description": "Mdh Design System with Storybook",
   "main": "dist/index.js",

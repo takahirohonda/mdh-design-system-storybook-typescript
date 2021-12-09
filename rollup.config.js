@@ -11,7 +11,8 @@ import pkg from './package.json';
 
 /**
  * The build currently includes node_modules: https://github.com/rollup/rollup/issues/3684
- * isolateModules can't tell that node_modules is special, and postcss auto includes a module to inject styles
+ * isolateModules can't tell that node_modules is special,
+ * and postcss auto includes a module to inject styles
  * we include a vendor dir for this included module to ensure it gets included
  */
 
