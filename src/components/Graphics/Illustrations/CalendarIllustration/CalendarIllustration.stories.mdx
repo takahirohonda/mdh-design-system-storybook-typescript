@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'; 
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { CalendarIllustration } from './CalendarIllustration';
 import { IllustrationSize } from '../IllustrationContainer';
 
@@ -12,13 +12,12 @@ Calendar illustration component.
 
 <Canvas>
   <Story
-  name="Explorer"
-  args={{
-  }}
+    name="Explorer"
+    args={{
+      size: IllustrationSize.Medium,
+    }}
   >
-    {(args) => (
-      <RocketIllustration {...args} />
-    )}
+    {(args) => <CalendarIllustration {...args} />}
   </Story>
 </Canvas>
 
@@ -28,9 +27,7 @@ Calendar illustration component.
 
 <Canvas>
   <Story name="Small">
-    <CalendarIllustration
-      size={IllustrationSize.Small}
-    />
+    <CalendarIllustration size={IllustrationSize.Small} />
   </Story>
 </Canvas>
 
@@ -38,9 +35,7 @@ Calendar illustration component.
 
 <Canvas>
   <Story name="Medium">
-    <CalendarIllustration
-      size={IllustrationSize.Medium}
-    />
+    <CalendarIllustration size={IllustrationSize.Medium} />
   </Story>
 </Canvas>
 
@@ -48,8 +43,6 @@ Calendar illustration component.
 
 <Canvas>
   <Story name="Large">
-    <CalendarIllustration
-      size={IllustrationSize.Large}
-    />
+    <CalendarIllustration size={IllustrationSize.Large} />
   </Story>
 </Canvas>
