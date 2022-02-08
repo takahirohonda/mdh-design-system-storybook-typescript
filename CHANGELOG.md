@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.0.1...v1.1.0) (2022-02-08)
+
+
+### Features
+
+* **update test:** test update ([6d51935](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/6d5193536d2eb645be29083b4750c19170704b9a))
+
 ## [1.0.1](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.0.0...v1.0.1) (2021-12-09)
 
 
