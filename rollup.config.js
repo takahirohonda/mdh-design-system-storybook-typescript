@@ -39,6 +39,7 @@ export default {
       format: 'esm',
       sourcemap: false,
       preserveModules: true,
+      // preserveModulesRoot: 'src', // this will make d.ts files created in the separate folder. Without it, it creates d.ts files in the same folders.
     },
   ],
   external: [
@@ -56,8 +57,8 @@ export default {
       modules: true,
     }),
     ...nodeModulePlugins,
-    Boolean(process.env.ANALYZE)
-      && visualizer({
+    Boolean(process.env.ANALYZE) &&
+      visualizer({
         filename: 'stats.html',
         template: 'treemap',
         open: true,
