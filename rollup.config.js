@@ -28,7 +28,7 @@ const nodeModulePlugins = [
 /**
  * TODO: Fix tree shaking
  * Unless you import via the explicit path, it imports all the styles in the library
- * So the compiled build for a react app goes up to 2.9M, when it could be 660kb
+ * So the compiled build for a react app goes up to 2.9M, when it could be 660kb.
  */
 
 export default {
