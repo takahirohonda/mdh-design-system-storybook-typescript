@@ -1,6 +1,6 @@
 {
   "name": "@mydatahack/mdh-design-system-storybook",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Mdh Design System with Storybook",
   "main": "dist/index.js",
   "publishConfig": {
