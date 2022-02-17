@@ -41,7 +41,7 @@ Commit to master will trigger Github actions to push the artifacts to the Git Pa
 
 # Release Process
 
-It will release a new node module upon merging to master.
+It will automatically create a new version and publish it upon merging to master. The build pipeline uses `semantic-release`. Make sure to use `commitizen` by `yarn commit` to have a conventional commit message.
 
 ```bash
 git add .
