@@ -41,7 +41,7 @@ Commit to master will trigger Github actions to push the artifacts to the Git Pa
 
 # Release Process
 
-It will release a new node module upon merging to master by `semantic-release`.
+It will release a new node module upon merging to master. The build pipeline uses `semantic-release`.
 
 ```bash
 git add .
