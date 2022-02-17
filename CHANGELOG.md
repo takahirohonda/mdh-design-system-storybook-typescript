@@ -1,3 +1,13 @@
+# [1.3.0](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.2.0...v1.3.0) (2022-02-17)
+
+
+### Features
+
+* **test:** first feature in the branch ([19de148](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/19de14822b2c4dabf18312f13547c46d98b45332))
+* **test:** fourth feature in the branch ([bd98f46](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/bd98f46adf56fce97340d0433637fa25fdbb9dfe))
+* **test:** second feature in the branch ([6062cf0](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/6062cf07f980e15a4e0d432b335a21c4ff493c43))
+* **test:** third feature in the branch ([09da990](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/09da9908962880192ebf4be4136336aece332d6c))
+
 # [1.2.0](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.1.0...v1.2.0) (2022-02-10)
 
 
