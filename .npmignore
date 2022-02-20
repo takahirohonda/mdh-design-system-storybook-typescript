@@ -1,0 +1,28 @@
+# folders
+src
+reference
+.github
+.husky
+.vscode
+
+# files
+.czrc
+.eslintignore
+.eslintrc.json
+.gitattributes
+.gitignore
+.npmignore
+.npmrc
+.prettierrc
+.releaserc.js
+.stylelintrc
+CHANGELOG.md
+commitlint.config.js
+jest.config.js
+rollup.config.js
+setup.ts
+tsconfig.json
+webpack.config.js
+yarn.lock
+
+# Note that README.md and LICENSE will be always included even it is listed here!
