@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.4.0...v1.4.1) (2022-02-21)
+
+
+### Bug Fixes
+
+* **ci:** making module public by adding .npmrc ([0f80743](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/0f80743a5923c6438019a2bc91c2daaef931ddb2))
+
 # [1.4.0](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.3.0...v1.4.0) (2022-02-17)
 
 
