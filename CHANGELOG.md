@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.4.1...v1.4.2) (2022-03-04)
+
+
+### Bug Fixes
+
+* **bundling:** remove src from npmignore ([5c2f756](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/5c2f7564f928f090d84252879a01fe8a591e93a6))
+
 ## [1.4.1](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.4.0...v1.4.1) (2022-02-21)
 
 
