@@ -1,4 +1,4 @@
-import React from 'react';
+import { Heading } from './Heading';
+import { HeadingFontStyle } from './enums';
 
-// To be implemented
-export const Heading = () => <div>Heading</div>;
+export { Heading, HeadingFontStyle };

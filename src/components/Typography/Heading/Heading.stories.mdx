@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Heading } from '.';
+import { HeadingFontStyle } from './enums';
+
+<Meta title="Atoms/Heading" component={Heading} />
+
+# Heading
+
+Heading component.
+
+## Summary
+
+<Canvas>
+  <Story 
+  name="Explorer"
+  args={{
+    level: 1,
+    renderAs: HeadingFontStyle.h2
+  }}
+  > 
+    {(args) => <Heading { ...args }>Explore Heading</Heading>}
+  </Story>
+</Canvas>
+
+## H1
+
+<Canvas>
+  <Story name="h1">
+    <Heading level={1}>Heading 1</Heading>
+  </Story>
+</Canvas>
+
+## H2
+
+<Canvas>
+  <Story name="h2">
+    <Heading level={2}>Heading 2</Heading>
+  </Story>
+</Canvas>
+
+## H3
+
+<Canvas>
+  <Story name="h3">
+    <Heading level={3}>Heading 3</Heading>
+  </Story>
+</Canvas>
