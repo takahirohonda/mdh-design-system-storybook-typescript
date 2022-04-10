@@ -1,2 +1,6 @@
 # Types
 src/**/*.scss.d.ts linguist-generated=true
+
+# Faking github to display js as typescript
+*.js linguist-language=TypeScript
+* -text
