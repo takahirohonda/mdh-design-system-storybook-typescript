@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { RadioButton } from '.';
+
+<Meta title='Forms/RadioButton' component={RadioButton} />
+
+# RadioButton
+
+`<RadioButton>` for a form. It is used as a child in `<RadioButtonGroup>`.
+
+## Summary
+
+<Canvas>
+  <Story name="Example">
+  <RadioButton id="example" onChange={() => {}}>
+    <span className="radioButtonLabelText">This is a radio button</span>
+  </RadioButton>
+  </Story>
+</Canvas>
+
+<ArgsTable of={RadioButton} />
+
+## Unchecked
+
+<Canvas>
+  <Story name="Unchecked">
+    <RadioButton id="Unchecked" onChange={() => {}}>
+      <span className="radioButtonLabelText">This is an unchecked radio button</span>
+    </RadioButton>
+  </Story>
+</Canvas>
+
+## Checked
+
+<Canvas>
+  <Story name="Checked">
+    <RadioButton id="checked" onChange={() => {}} checked>
+      <span className="radioButtonLabelText">This is a checked radio button</span>
+    </RadioButton>
+  </Story>
+</Canvas>
