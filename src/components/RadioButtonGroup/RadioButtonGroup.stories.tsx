@@ -12,6 +12,11 @@ export default {
     name: 'radio',
     hasError: false,
   },
+  // docs: {
+  //   description: {
+  //     component: '`<RadioButtonGroup>` for a form. Children must be 2 or more of `<RadioButton>`.',
+  //   },
+  // },
 };
 
 // Trying useField
@@ -87,3 +92,11 @@ const RadioButtonGroupComponentWithRadioOutlineCardBrandUseFormikTemplate: Story
 export const RadioButtonGroupWithRadioOutlineCardBrandUseFormik = RadioButtonGroupComponentWithRadioOutlineCardBrandUseFormikTemplate.bind(
   {}
 );
+
+RadioButtonGroupWithRadioOutlineCardBrandUseFormik.parameters = {
+  docs: {
+    description: {
+      component: '`<RadioButtonGroup>` for a form. Children must be 2 or more of `<RadioButton>`.',
+    },
+  },
+};
