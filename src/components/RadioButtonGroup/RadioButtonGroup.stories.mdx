@@ -3,7 +3,7 @@ import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { RadioButton } from '../RadioButton';
 import { RadioButtonGroup } from '.';
 
-<Meta title='Forms/RadioButtonGroup' component={RadioButtonGroup} />
+<Meta title="Forms/MDX/RadioButtonGroup" component={RadioButtonGroup} />
 
 # RadioButtonGroup
 
@@ -16,7 +16,12 @@ import { RadioButtonGroup } from '.';
     {() => {
       const [checkedValue, setCheckedValue] = useState('');
       return (
-        <RadioButtonGroup name="example" value={checkedValue} onChange={setCheckedValue} hasError={false}>
+        <RadioButtonGroup
+          name="example"
+          value={checkedValue}
+          onChange={setCheckedValue}
+          hasError={false}
+        >
           <RadioButton id="first" value="first" key="first">
             <span className="radioButtonLabelText">Admin</span>
           </RadioButton>
@@ -33,4 +38,3 @@ import { RadioButtonGroup } from '.';
 </Canvas>
 
 <ArgsTable of={RadioButtonGroup} />
-
