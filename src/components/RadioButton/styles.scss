@@ -1,0 +1,60 @@
+@import '../../css/variables';
+
+@mixin action-state($focus-color, $cursor-type) {
+  &:focus,
+  &:hover {
+    cursor: $cursor-type;
+
+    & .renderedRadioButton__base {
+      stroke: $focus-color;
+    }
+  }
+}
+
+.radioButtonWrapper {
+  padding: 12px;
+  border-radius: 4px;
+
+  &.checked {
+    background-color: $light-blue;
+  }
+
+  & > input {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    opacity: 0;
+  }
+
+  & > label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  & > label,
+  & > input {
+    @include action-state($primary-blue, pointer);
+  }
+}
+
+.renderedRadioButton {
+  z-index: 1;
+  margin-right: 16px;
+  fill: $white;
+}
+
+.renderedRadioButton__base {
+  position: relative;
+  stroke: $light-gray;
+  stroke-width: 1;
+
+  &.checked {
+    stroke: $primary-blue;
+    fill: $white;
+  }
+}
+
+.renderedRadioButton__checked {
+  fill: $primary-blue;
+}
