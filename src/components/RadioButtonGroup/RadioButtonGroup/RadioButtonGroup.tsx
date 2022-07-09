@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactHTMLElement } from 'react';
-import { RadioButton } from '../RadioButton/RadioButton';
+import { RadioButton } from '../../RadioButton';
 
 export interface RadioButtonGroupProps {
   children: (ReactElement<HTMLElement> | ReactHTMLElement<HTMLElement>)[];
