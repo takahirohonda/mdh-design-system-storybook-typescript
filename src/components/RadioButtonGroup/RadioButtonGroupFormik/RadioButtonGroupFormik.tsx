@@ -1,43 +1,23 @@
 import React, { ReactElement, ReactHTMLElement } from 'react';
+import { useField } from 'formik';
+import { RadioButtonGroup, RadioButtonGroupProps } from '../RadioButtonGroup';
 import { RadioButton } from '../../RadioButton';
 
-export interface RadioButtonGroupProps {
-  children: (ReactElement<HTMLElement> | ReactHTMLElement<HTMLElement>)[];
-  name: string;
-  value: string;
-  className?: string;
-  hasError?: boolean;
-  disabled?: boolean;
-  onChange: (value: string) => void;
-}
+export type RadioButtonGroupFormixProps = RadioButtonGroupProps
 
-const isRadioButtonInputElement = (
-  element: ReactElement<HTMLElement> | ReactHTMLElement<HTMLElement>
-): element is ReactHTMLElement<HTMLInputElement> => {
-  return element.type === RadioButton;
-};
-
-export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
+export const RadioButtonGroupFormik: React.FC<RadioButtonGroupFormixProps> = ({
   children,
   name,
-  value,
-  className,
-  onChange,
-}) => (
-  <div className={className}>
-    {React.Children.map(children, (child) => {
-      if (isRadioButtonInputElement(child)) {
-        return React.cloneElement(child, {
-          ...child.props,
-          name,
-          checked: value === child.props.value,
-          onChange: (e) => onChange(e.currentTarget.value),
-        });
-      }
+}) => {
+  const [field, , helpers] = useField(name);
+  const { value, onBlur } = field;
+  const { setValue } = helpers;
 
-      return child;
-    })}
-  </div>
-);
+  return (
+    <RadioButtonGroup name={name} value={value} onChange={setValue} onBlur={onBlur}>
+      {children}
+    </RadioButtonGroup>
+  );
+};
 
-RadioButtonGroup.displayName = 'RadioButtonGroup';
+RadioButtonGroupFormik.displayName = 'RadioButtonGroupFormik';

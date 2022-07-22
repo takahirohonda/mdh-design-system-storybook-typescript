@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Story } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { useFormik } from 'formik';
 import { RadioButton } from '../../RadioButton';
 
@@ -11,6 +12,7 @@ export default {
   args: {
     name: 'radio',
     hasError: false,
+    onBlur: () => {},
   },
   docs: {
     description: {
@@ -41,18 +43,18 @@ const RadioButtonGroupComponentWithRadioButtonTemplate: Story<RadioButtonGroupPr
 };
 
 export const RadioButtonGroupWithRadioButton = RadioButtonGroupComponentWithRadioButtonTemplate.bind(
-  {}
+  {},
 );
 
 // Trying useFormik
 const RadioButtonGroupComponentWithRadioButtonUseFormikTemplate: Story<RadioButtonGroupProps> = (
-  args
+  args,
 ) => {
   const formik = useFormik({
     initialValues: {
       radio: 'xero',
     },
-    onSubmit: (values) => alert(`form submitted with ${JSON.stringify(values)}`),
+    onSubmit: action('Form submitted'),
   });
 
   const changeHandler = (values: any) => {
@@ -66,6 +68,7 @@ const RadioButtonGroupComponentWithRadioButtonUseFormikTemplate: Story<RadioButt
         value={formik.values.radio}
         onChange={changeHandler}
         hasError={false}
+        onBlur={args.onBlur}
       >
         <RadioButton id="first" value="first" key="first">
           <span className="radioButtonLabelText">Admin</span>
@@ -83,7 +86,7 @@ const RadioButtonGroupComponentWithRadioButtonUseFormikTemplate: Story<RadioButt
 };
 
 export const RadioButtonGroupWithRadioButtonUseFormik = RadioButtonGroupComponentWithRadioButtonUseFormikTemplate.bind(
-  {}
+  {},
 );
 
 RadioButtonGroupWithRadioButtonUseFormik.parameters = {

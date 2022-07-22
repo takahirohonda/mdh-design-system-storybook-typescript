@@ -6,14 +6,14 @@ import { RadioButtonGroup } from './RadioButtonGroup';
 describe('<RadioButtonGroup>', () => {
   it('renders correctly with RadioButton children', () => {
     const wrapper = mount(
-      <RadioButtonGroup name="test" value="first" onChange={() => {}}>
+      <RadioButtonGroup name="test" value="first" onChange={jest.fn()} onBlur={jest.fn()}>
         <RadioButton id="first" value="first" key="first">
           First
         </RadioButton>
         <RadioButton id="second" value="second" key="second">
           Second
         </RadioButton>
-      </RadioButtonGroup>
+      </RadioButtonGroup>,
     );
 
     const elem = wrapper.find('input');
@@ -24,10 +24,10 @@ describe('<RadioButtonGroup>', () => {
 
   it('renders correctly when children is not RadioButton', () => {
     const wrapper = shallow(
-      <RadioButtonGroup name="test" value="first" onChange={() => {}}>
+      <RadioButtonGroup name="test" value="first" onChange={() => {}} onBlur={jest.fn()}>
         <p>check</p>
         <p>check</p>
-      </RadioButtonGroup>
+      </RadioButtonGroup>,
     );
     const elem = wrapper.find('p');
     expect(elem).toHaveLength(2);
