@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactHTMLElement } from 'react';
+import React, { ReactElement, ReactHTMLElement, FocusEvent } from 'react';
 import { RadioButton } from '../../RadioButton';
 
 export interface RadioButtonGroupProps {
@@ -9,13 +9,12 @@ export interface RadioButtonGroupProps {
   hasError?: boolean;
   disabled?: boolean;
   onChange: (value: string) => void;
+  onBlur: (e: FocusEvent<HTMLInputElement>) => void;
 }
 
 const isRadioButtonInputElement = (
-  element: ReactElement<HTMLElement> | ReactHTMLElement<HTMLElement>
-): element is ReactHTMLElement<HTMLInputElement> => {
-  return element.type === RadioButton;
-};
+  element: ReactElement<HTMLElement> | ReactHTMLElement<HTMLElement>,
+): element is ReactHTMLElement<HTMLInputElement> => element.type === RadioButton;
 
 export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   children,
@@ -23,6 +22,7 @@ export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   value,
   className,
   onChange,
+  onBlur,
 }) => (
   <div className={className}>
     {React.Children.map(children, (child) => {
@@ -32,6 +32,7 @@ export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
           name,
           checked: value === child.props.value,
           onChange: (e) => onChange(e.currentTarget.value),
+          onBlur: (e) => onBlur(e),
         });
       }
 
