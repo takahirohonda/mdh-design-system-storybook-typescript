@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.5.0...v1.6.0) (2022-07-22)
+
+
+### Features
+
+* **radiobuttongroupformik:** add RadioButtonGroup with Formix ([791253a](https://github.com/mydatahack/mdh-design-system-storybook-typescript/commit/791253a24b84bc92406daecd8a7e1302283ce484))
+
 # [1.5.0](https://github.com/mydatahack/mdh-design-system-storybook-typescript/compare/v1.4.4...v1.5.0) (2022-07-05)
 
 
