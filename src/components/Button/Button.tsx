@@ -4,6 +4,9 @@ import { joinClassNames } from '../../utils';
 import styles from './styles.scss';
 
 export type ButtonProps = {
+  /**
+   * This adds comment to the prop table in the storybook doc.
+   */
   fullWidth?: boolean;
   isDisabled?: boolean;
   link?: string;
